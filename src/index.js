@@ -10,9 +10,9 @@ app.use(bodyParser.text());
 
 app.use('/api',apiRouter);
 
-app.get('/ping',(req,res)=>{
-    res.json({message:"Server is working!"});
-})
+// app.get('/ping',(req,res)=>{
+//     res.json({message:"Server is working!"});
+// })
 
 app.listen(PORT, ()=>{
     console.log(`Server Started At ${PORT}`);
