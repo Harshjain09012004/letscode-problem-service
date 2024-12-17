@@ -8,28 +8,28 @@ function addProblem(req,res,next){
     catch(err){next(err);}
 }
 
-function updateProblem(req,res){
+function updateProblem(req,res,next){
     try{
         throw new notImplementedError('Add Problem');
     }
     catch(err){next(err);}
 }
 
-function deleteProblem(req,res){
+function deleteProblem(req,res,next){
     try{
         throw new notImplementedError('Add Problem');
     }
     catch(err){next(err);}
 }
 
-function getProblem(req,res){
+function getProblem(req,res,next){
     try{
         throw new notImplementedError('Add Problem');
     }
     catch(err){next(err);}
 }
 
-function pingProblem(req,res){
+function pingProblem(req,res,next){
     return res.json({Message:"Problem Router working fine!"});
 }
 
