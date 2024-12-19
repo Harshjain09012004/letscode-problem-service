@@ -32,9 +32,15 @@ function deleteProblem(req,res){
     catch(err){next(err);}
 }
 
-function getProblem(req,res){
+async function getProblems(req,res){
     try{
-        throw new notImplementedError('Add Problem');
+        const problems = await newProblemService.getProblems();
+        res.status(StatusCodes.OK).json({
+            success: true,
+            message: 'Problems fetched successfully',
+            error: {},
+            data: problems,
+        })
     }
     catch(err){next(err);}
 }
@@ -47,6 +53,6 @@ module.exports = {
     addProblem,
     updateProblem,
     deleteProblem, 
-    getProblem,
+    getProblems,
     pingProblem
 };
