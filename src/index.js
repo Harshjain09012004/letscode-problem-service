@@ -7,7 +7,7 @@ const  connectToDB = require('./config/db.config')
 const bodyParser = require('body-parser');
 const apiRouter = require('./routes');
 const baseError = require('./errors/base.error');
-const errorHandler = require('./utils/errorHandler');
+const { errorHandler } = require('./utils');
 
 
 const app = express();
