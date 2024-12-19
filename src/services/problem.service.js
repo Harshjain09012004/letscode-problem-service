@@ -16,10 +16,16 @@ class ProblemService{
         return problem;
     }
 
-    async getProblems(){
-        const problems = await this.ProblemRepository.getProblems();
+    async getAllProblems(){
+        const problems = await this.ProblemRepository.getAllProblems();
         
         return problems;
+    }
+
+    async getProblem(Id){
+        const problem = await this.ProblemRepository.getProblem(Id);
+        
+        return problem;
     }
 }
 
