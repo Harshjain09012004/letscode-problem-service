@@ -25,9 +25,15 @@ function updateProblem(req,res,next){
     catch(err){next(err);}
 }
 
-function deleteProblem(req,res,next){
+async function deleteProblem(req,res,next){
     try{
-        throw new notImplementedError('Add Problem');
+        const result = await newProblemService.deleteProblem(req.params.id);
+        return res.status(StatusCodes.OK).json({
+            success: true,
+            message: 'Problems deleted successfully',
+            error: {},
+            data: result,
+        })
     }
     catch(err){next(err);}
 }
