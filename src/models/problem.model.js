@@ -8,7 +8,8 @@ const problemSchema = new mongoose.Schema({
     },
     title : {
         type : String,
-        required : [true, 'Title can\'t be empty']
+        required : [true, 'Title can\'t be empty'],
+        unique : [true, 'Title must be distinct']
     },
     difficulty : {
         type : String,
