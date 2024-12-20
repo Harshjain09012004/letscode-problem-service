@@ -54,6 +54,18 @@ class ProblemRepository{
             throw err;
         }
     }
+
+    async updateProblem(Id, newProperties){
+        try{
+            const result = await problemModel.updateOne({uid : Id},{$set : newProperties});
+            if(result.modifiedCount==0) throw new notFoundError('Problem',Id);
+            return result;
+        }
+        catch(err){
+            console.log(err);
+            throw err;
+        }
+    }
 }
 
 module.exports = ProblemRepository;
