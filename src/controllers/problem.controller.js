@@ -71,7 +71,10 @@ async function getProblem(req,res,next){
 }
 
 function pingProblem(req,res){
-    return res.json({Message:"Problem Router working fine!"});
+    return res.status(200).json({
+        message:"Problem Router working fine!",
+        success:true
+    });
 }
 
 module.exports = {
