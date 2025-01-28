@@ -29,7 +29,19 @@ const problemSchema = new mongoose.Schema({
             type : String,
             required : [true, 'Output can\'t be empty']
         }
-    }]
+    }],
+    codeStubs : [
+        {
+            language : {
+                type : String,
+                enum : ['CPP', 'JAVA', 'PYTHON'],
+                required : true
+            },
+            startSnippet : String,
+            userSnippet : String,
+            endSnippet : String
+        }
+    ]
 });
 
 const problemModel = new mongoose.model("Problems",problemSchema);
