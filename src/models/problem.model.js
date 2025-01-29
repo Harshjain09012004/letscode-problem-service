@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 
 const problemSchema = new mongoose.Schema({
     uid : {
-        type : Number,
+        type : String,
         required : [true, 'Id can\'t be empty'],
         unique : [true, 'Id must be distinct']
     },

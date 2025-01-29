@@ -34,7 +34,7 @@ class ProblemRepository{
 
     async getProblem(Id){
         try{
-            const problem = await problemModel.find({uid : Id});
+            const problem = await problemModel.findOne({uid : Id});
             console.log(problem);
             if(problem.length==0) throw new notFoundError('Problem',Id);
             else return problem;
